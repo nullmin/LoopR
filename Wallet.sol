@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: None
+// SPDX-License-Identifier: NONE
 pragma solidity 0.8.26;
 
 import "./LoopR.sol";
