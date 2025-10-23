@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: NONE
 pragma solidity 0.8.26;
 
 import "@balancer-labs/v2-interfaces/contracts/vault/IVault.sol";
@@ -206,4 +206,5 @@ contract LoopR is Ownable, IFlashLoanRecipient{
                 address(this)
             );
     }
+
 }
