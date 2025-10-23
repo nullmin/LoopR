@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: None
+// SPDX-License-Identifier: NONE
 pragma solidity 0.8.26;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -13,13 +13,12 @@ contract WalletFactory is Ownable {
     mapping(address => address) private userWallets;
     address private feeTo;
     uint256 private ownerFeePercent;
-    uint256 private feeFactor; // number the feePercent is divided by
+    uint256 private feeFactor = 100; // number the feePercent is divided by
 
     event WalletCreated(address indexed owner, address wallet);
 
     constructor() Ownable(msg.sender) {
         ownerFeePercent = 3;
-        feeFactor = 100;
     }
 
     function createWallet() external {
@@ -64,7 +63,7 @@ contract WalletFactory is Ownable {
     }
 
     function setFeeFactor(uint256 _feeFactor) external onlyOwner {
-        require(_feeFactor <= 10000, "Fee percent cannot exceed 10000");
+        require(_feeFactor <= 100, "Fee percent cannot exceed 10000");
         feeFactor = _feeFactor;
     }
 
