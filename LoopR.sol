@@ -187,7 +187,7 @@ contract LoopR is Ownable, IFlashLoanRecipient{
         IERC20(_tokenAddress).transfer(this.owner(), newBalance);
     }
 
-    function getLoopBalance() public view returns (uint256) {
+    function getActiveBalance() public view returns (uint256) {
         return balance;
     } 
 
@@ -206,5 +206,4 @@ contract LoopR is Ownable, IFlashLoanRecipient{
                 address(this)
             );
     }
-
 }
